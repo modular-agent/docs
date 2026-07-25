@@ -32,7 +32,7 @@ Agent implementations ship as separate Rust crates that plug into the core runti
 
 | Repository | Description |
 |-----------|-------------|
-| [modular-agent-web](https://github.com/modular-agent/modular-agent-web) | HTTP, scraping, YouTube |
+| [modular-agent-web](https://github.com/modular-agent/modular-agent-web) | HTTP, scraping, search, YouTube |
 | [modular-agent-slack](https://github.com/modular-agent/modular-agent-slack) | Slack messaging |
 | [modular-agent-lifelog](https://github.com/modular-agent/modular-agent-lifelog) | Screen capture, window tracking |
 
