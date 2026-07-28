@@ -72,7 +72,7 @@ The preset file used here is the echo example from [External I/O](/concepts/exte
 ## Walkthrough
 
 1. **Initialize** — `ModularAgent::init()` creates the orchestrator; `ready().await` waits until it can accept commands.
-2. **Subscribe** — Register an event filter for the outputs you care about. Do this before starting the preset so no early output is lost.
+2. **Subscribe** — Register an event filter for the outputs you care about. Do this before starting the preset so you don't miss early output.
 3. **Load & start** — `open_preset_from_file()` parses the preset JSON and instantiates its agents; `start_preset()` runs their `start()` hooks and begins routing.
 4. **Exchange values** — `write_external_input(name, value)` feeds the network through [ExternalInputAgent](/concepts/external-io); outputs arrive on your subscription.
 5. **Cleanup** — Stop the preset and call `quit()` to shut down.

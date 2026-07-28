@@ -71,8 +71,8 @@ Presets are JSON files describing a workflow: which agents exist, how they are c
 
 When you load a preset saved by an older agent package, the runtime **reconciles** the stored spec with the current agent definition:
 
-- Missing config keys are filled in with the definition's defaults
-- Stale (renamed or removed) config keys are kept with a `_` prefix so agents can migrate their values later
-- Ports and config specs are overwritten from the current definition
+- The runtime fills missing config keys from the definition's defaults
+- It keeps stale (renamed or removed) config keys under a `_` prefix so agents can migrate their values later
+- It overwrites ports and config specs from the current definition
 
-This means presets keep working across agent package upgrades without manual migration.
+Presets therefore keep working across agent package upgrades without manual migration.

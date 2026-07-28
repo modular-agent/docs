@@ -41,8 +41,8 @@ Config names starting with `_` are reserved for stale-key migration (see below).
 
 ## Renaming Configs Safely
 
-When you rename or remove a config key, presets saved with the old key still load: the runtime keeps the stale value under a `_`-prefixed key so your `new()` constructor can migrate it. The `_`-prefixed keys are stripped automatically after `new()` has run.
+When you rename or remove a config key, presets saved with the old key still load: the runtime keeps the stale value under a `_`-prefixed key so your `new()` constructor can migrate it. The runtime strips the `_`-prefixed keys after `new()` returns.
 
 ## Global Configuration
 
-Some settings, like API keys and endpoints, belong to the whole application rather than a single agent instance. Agent packages can declare **global configs** (e.g. via `string_global_config` / `custom_global_config`), which the desktop app surfaces in its settings screen. Document them in the agent's doc comment under a `# Global Configuration` heading.
+Some settings, like API keys and endpoints, belong to the whole application, not to one agent instance. Agent packages can declare **global configs** (e.g. via `string_global_config` / `custom_global_config`), which the desktop app surfaces in its settings screen. Document them in the agent's doc comment under a `# Global Configuration` heading.

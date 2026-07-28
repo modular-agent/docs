@@ -21,11 +21,11 @@ Modular Agent Desktop is a node-based visual editor for building and running age
 
 ## Preset Management
 
-Presets can be saved, loaded, imported, and exported. They are plain JSON files (see [Preset Format](/concepts/preset-format)), so they can be versioned in git or shared with others.
+You can save, load, import, and export presets. They are plain JSON files (see [Preset Format](/concepts/preset-format)), so you can version them in git or share them with others.
 
 ## Auto-Start and System Tray
 
-- **Auto-Start** — Presets can be configured to start automatically when the app launches, which is useful for always-on workflows like lifelogging or chat bots.
+- **Auto-Start** — Configure a preset to start automatically when the app launches, for always-on workflows like lifelogging or chat bots.
 - **System Tray** — The app minimizes to the system tray and keeps workflows running in the background.
 
 ## Architecture

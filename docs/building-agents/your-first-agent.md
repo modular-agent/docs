@@ -74,7 +74,7 @@ The macro generates an `AgentDefinition`, the metadata the runtime and the edito
 
 ### Doc Comments Become Descriptions
 
-The macro extracts the `///` doc comment on the struct as the agent's description and shows it in the editor. Follow this structure:
+The macro extracts the `///` doc comment on the struct as the agent's description; the editor displays it. Follow this structure:
 
 ```rust
 /// One-line summary of the agent.
@@ -110,4 +110,4 @@ AgentError::IoError(format!("Network error: {}", e))
 
 ## Packaging
 
-Agents are distributed as ordinary Rust crates depending on `modular-agent-core`. Add your crate to a desktop build with the [ma-config wizard](/desktop/custom-build), or register it in your own embedding application.
+You distribute agents as ordinary Rust crates depending on `modular-agent-core`. Add your crate to a desktop build with the [ma-config wizard](/desktop/custom-build), or register it in your own embedding application.

@@ -59,4 +59,4 @@ Because the flow is **stream-based**, agents process values as they arrive. Long
 | `modular-agent-std`, `-llm`, `-web`, ... | Agent plugin libraries |
 | `modular-agent-desktop` | Visual editor app built on the core runtime |
 
-The core library has minimal dependencies; agent implementations live in separate crates and are compiled in as plugins.
+The core library has minimal dependencies; agent implementations live in separate crates that you compile in as plugins.

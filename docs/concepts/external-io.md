@@ -5,7 +5,7 @@ sidebar_position: 3
 
 # External I/O
 
-A preset is a closed graph of agents. External I/O agents are the bridges that let the outside world (your application code, or the desktop app UI) exchange values with it.
+A preset is a closed graph of agents. External I/O agents connect that graph to the outside world: your application code, or the desktop app UI.
 
 ## External Agents
 
@@ -30,7 +30,7 @@ let mut rx = ma.subscribe_to_event(|event| {
 ```
 
 :::tip[Subscribe before starting]
-Subscribe to output events **before** starting the preset, otherwise output produced during startup can be lost to a race condition.
+Subscribe to output events **before** starting the preset, otherwise a race condition can drop output produced during startup.
 :::
 
 ## Local Agents

@@ -42,7 +42,7 @@ npm run tauri dev
 
 ## Choosing Agent Packages
 
-The default build bundles the standard agent packages (LLM, web, Slack, SQL databases, audio, and more). To customize which agent crates are compiled in, use the **ma-config** wizard. See [Custom Build](/desktop/custom-build).
+The default build bundles the standard agent packages (LLM, web, Slack, SQL databases, audio, and more). To choose which agent crates to compile in, use the **ma-config** wizard. See [Custom Build](/desktop/custom-build).
 
 ## Using the Core Library Only
 

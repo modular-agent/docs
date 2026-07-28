@@ -42,4 +42,4 @@ Many agents accept a `Unit` on an input port as a "fire now" signal. A timer age
 
 ## Error Propagation
 
-Errors are first-class values. When an agent fails, it can emit an `Error` value downstream instead of silently stopping, letting the workflow route, log, or display failures like any other data.
+Errors are first-class values. When an agent fails, it can emit an `Error` value downstream. Downstream agents route, log, or display the failure like any other value.

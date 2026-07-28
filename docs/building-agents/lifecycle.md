@@ -46,7 +46,7 @@ impl AsAgent for MyAgent {
 
 | Hook | When |
 |------|------|
-| `new()` | The preset is loaded and the agent instance is created |
+| `new()` | The runtime loads the preset and creates the agent instance |
 | `start()` | The preset starts (Play). Spawn background tasks, open connections, start timers here |
 | `process()` | A value arrives on one of the agent's input ports |
 | `configs_changed()` | The user edits the agent's config while it is running |
