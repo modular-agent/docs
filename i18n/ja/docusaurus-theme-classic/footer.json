@@ -1,0 +1,50 @@
+{
+  "link.title.Docs": {
+    "message": "ドキュメント",
+    "description": "The title of the footer links column with title=Docs in the footer"
+  },
+  "link.title.Repositories": {
+    "message": "リポジトリ",
+    "description": "The title of the footer links column with title=Repositories in the footer"
+  },
+  "link.title.More": {
+    "message": "その他",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.Getting Started": {
+    "message": "はじめる",
+    "description": "The label of footer link with label=Getting Started linking to /getting-started/installation"
+  },
+  "link.item.label.Core Concepts": {
+    "message": "コアコンセプト",
+    "description": "The label of footer link with label=Core Concepts linking to /concepts/architecture"
+  },
+  "link.item.label.Building Agents": {
+    "message": "エージェントを作る",
+    "description": "The label of footer link with label=Building Agents linking to /building-agents/your-first-agent"
+  },
+  "link.item.label.modular-agent-desktop": {
+    "message": "modular-agent-desktop",
+    "description": "The label of footer link with label=modular-agent-desktop linking to https://github.com/modular-agent/modular-agent/tree/main/apps/desktop"
+  },
+  "link.item.label.modular-agent-core": {
+    "message": "modular-agent-core",
+    "description": "The label of footer link with label=modular-agent-core linking to https://github.com/modular-agent/modular-agent/tree/main/crates/modular-agent-core"
+  },
+  "link.item.label.All repositories": {
+    "message": "すべてのリポジトリ",
+    "description": "The label of footer link with label=All repositories linking to https://github.com/modular-agent"
+  },
+  "link.item.label.crates.io": {
+    "message": "crates.io",
+    "description": "The label of footer link with label=crates.io linking to https://crates.io/crates/modular-agent-core"
+  },
+  "link.item.label.docs.rs": {
+    "message": "docs.rs",
+    "description": "The label of footer link with label=docs.rs linking to https://docs.rs/modular-agent-core"
+  },
+  "copyright": {
+    "message": "Copyright © 2026 Modular Agent. Built with Docusaurus.",
+    "description": "The footer copyright"
+  }
+}

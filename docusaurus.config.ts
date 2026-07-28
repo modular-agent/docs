@@ -22,7 +22,13 @@ const config: Config = {
 
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'ja'],
+    localeConfigs: {
+      ja: {
+        label: '日本語',
+        htmlLang: 'ja',
+      },
+    },
   },
 
   presets: [
@@ -61,6 +67,10 @@ const config: Config = {
           label: 'Docs',
         },
         {
+          type: 'localeDropdown',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/modular-agent',
           label: 'GitHub',
           position: 'right',
@@ -92,11 +102,11 @@ const config: Config = {
           items: [
             {
               label: 'modular-agent-desktop',
-              href: 'https://github.com/modular-agent/modular-agent-desktop',
+              href: 'https://github.com/modular-agent/modular-agent/tree/main/apps/desktop',
             },
             {
               label: 'modular-agent-core',
-              href: 'https://github.com/modular-agent/modular-agent-core',
+              href: 'https://github.com/modular-agent/modular-agent/tree/main/crates/modular-agent-core',
             },
             {
               label: 'All repositories',

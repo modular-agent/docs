@@ -1,0 +1,26 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docsSidebar.category.Getting Started": {
+    "message": "はじめる",
+    "description": "The label for category 'Getting Started' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Core Concepts": {
+    "message": "コアコンセプト",
+    "description": "The label for category 'Core Concepts' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Desktop App": {
+    "message": "デスクトップアプリ",
+    "description": "The label for category 'Desktop App' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Building Agents": {
+    "message": "エージェントを作る",
+    "description": "The label for category 'Building Agents' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Embedding": {
+    "message": "組み込み",
+    "description": "The label for category 'Embedding' in sidebar 'docsSidebar'"
+  }
+}
