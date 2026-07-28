@@ -34,6 +34,6 @@ The desktop app is a thin visual shell over the core runtime:
 
 - **Frontend** — [SvelteKit](https://svelte.dev/docs/kit/) + [Svelte 5](https://svelte.dev/), TypeScript, Tailwind CSS, [Svelte Flow](https://svelteflow.dev/), shadcn-svelte
 - **Backend** — Rust with [Tauri 2](https://v2.tauri.app/)
-- **Core** — [`modular-agent-core`](https://github.com/modular-agent/modular-agent-core) agent runtime, bridged via [`tauri-plugin-modular-agent`](https://github.com/modular-agent/tauri-plugin-modular-agent)
+- **Core** — [`modular-agent-core`](https://github.com/modular-agent/modular-agent/tree/main/crates/modular-agent-core) agent runtime, bridged via [`tauri-plugin-modular-agent`](https://github.com/modular-agent/modular-agent/tree/main/crates/tauri-plugin-modular-agent)
 
 Everything runs locally: the editor, the runtime, and the agents. No cloud dependency.

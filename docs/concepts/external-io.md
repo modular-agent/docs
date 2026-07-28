@@ -29,7 +29,7 @@ let mut rx = ma.subscribe_to_event(|event| {
 });
 ```
 
-:::tip Subscribe before starting
+:::tip[Subscribe before starting]
 Subscribe to output events **before** starting the preset, otherwise output produced during startup can be lost to a race condition.
 :::
 

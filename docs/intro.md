@@ -45,9 +45,9 @@ Modular Agent spans a family of repositories:
 
 | Repository | Purpose |
 |-----------|---------|
-| [modular-agent-desktop](https://github.com/modular-agent/modular-agent-desktop) | Visual workflow editor (Tauri 2 + Svelte 5) |
-| [modular-agent-core](https://github.com/modular-agent/modular-agent-core) | Core orchestration runtime (Rust) |
-| [modular-agent-std](https://github.com/modular-agent/modular-agent-std), [llm](https://github.com/modular-agent/modular-agent-llm), [web](https://github.com/modular-agent/modular-agent-web), ... | Agent plugin libraries |
+| [modular-agent-desktop](https://github.com/modular-agent/modular-agent/tree/main/apps/desktop) | Visual workflow editor (Tauri 2 + Svelte 5) |
+| [modular-agent-core](https://github.com/modular-agent/modular-agent/tree/main/crates/modular-agent-core) | Core orchestration runtime (Rust) |
+| [modular-agent-std](https://github.com/modular-agent/modular-agent/tree/main/crates/modular-agent-std), [llm](https://github.com/modular-agent/modular-agent/tree/main/crates/modular-agent-llm), [web](https://github.com/modular-agent/modular-agent/tree/main/crates/modular-agent-web), ... | Agent plugin libraries |
 
 See [Agent Packages](/agent-packages) for the full list.
 

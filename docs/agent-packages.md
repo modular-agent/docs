@@ -11,28 +11,28 @@ Agent implementations ship as separate Rust crates that plug into the core runti
 
 | Repository | Description |
 |-----------|-------------|
-| [modular-agent-desktop](https://github.com/modular-agent/modular-agent-desktop) | Visual preset editor (Tauri 2 + Svelte 5) |
+| [modular-agent-desktop](https://github.com/modular-agent/modular-agent/tree/main/apps/desktop) | Visual preset editor (Tauri 2 + Svelte 5) |
 | [modular-agent-chatvrm](https://github.com/modular-agent/modular-agent-chatvrm) | Avatar chat interface |
 
 ## Core
 
 | Repository | Description |
 |-----------|-------------|
-| [modular-agent-core](https://github.com/modular-agent/modular-agent-core) | Orchestration engine and `#[modular_agent]` macro |
-| [tauri-plugin-modular-agent](https://github.com/modular-agent/tauri-plugin-modular-agent) | Tauri plugin bridging the runtime to app frontends |
+| [modular-agent-core](https://github.com/modular-agent/modular-agent/tree/main/crates/modular-agent-core) | Orchestration engine and `#[modular_agent]` macro |
+| [tauri-plugin-modular-agent](https://github.com/modular-agent/modular-agent/tree/main/crates/tauri-plugin-modular-agent) | Tauri plugin bridging the runtime to app frontends |
 
 ## Agent Libraries — General
 
 | Repository | Description |
 |-----------|-------------|
-| [modular-agent-std](https://github.com/modular-agent/modular-agent-std) | Standard utility agents (50+) |
-| [modular-agent-llm](https://github.com/modular-agent/modular-agent-llm) | LLM integrations: OpenAI, Ollama |
+| [modular-agent-std](https://github.com/modular-agent/modular-agent/tree/main/crates/modular-agent-std) | Standard utility agents (50+) |
+| [modular-agent-llm](https://github.com/modular-agent/modular-agent/tree/main/crates/modular-agent-llm) | LLM integrations: OpenAI, Ollama |
 
 ## Agent Libraries — Data Sources
 
 | Repository | Description |
 |-----------|-------------|
-| [modular-agent-web](https://github.com/modular-agent/modular-agent-web) | HTTP, scraping, search, YouTube |
+| [modular-agent-web](https://github.com/modular-agent/modular-agent/tree/main/crates/modular-agent-web) | HTTP, scraping, search, YouTube |
 | [modular-agent-slack](https://github.com/modular-agent/modular-agent-slack) | Slack messaging |
 | [modular-agent-lifelog](https://github.com/modular-agent/modular-agent-lifelog) | Screen capture, window tracking |
 
