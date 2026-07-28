@@ -6,7 +6,7 @@ const config: Config = {
   title: 'Modular Agent',
   tagline:
     'Build AI workflows like a modular synth — patch extensible agents together visually into real-time pipelines.',
-  favicon: 'img/logo.png',
+  favicon: 'img/favicon.ico',
 
   future: {
     v4: true,
