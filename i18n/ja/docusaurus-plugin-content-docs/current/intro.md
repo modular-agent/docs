@@ -1,11 +1,11 @@
 ---
 id: intro
 slug: /
-title: Modular Agent とは
+title: Modular Agent
 sidebar_position: 1
 ---
 
-# Modular Agent とは
+# Modular Agent
 
 **Modular Agent** は、モジュラーシンセのように AI ワークフローを組み立てるためのフレームワークです。
 それぞれはシンプルな処理しか行わないエージェント同士をパッチして、LLM、データベース、メッセージングなどをまたぐリアルタイムのパイプラインを構築できます。

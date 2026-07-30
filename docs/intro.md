@@ -1,11 +1,11 @@
 ---
 id: intro
 slug: /
-title: What is Modular Agent?
+title: Modular Agent
 sidebar_position: 1
 ---
 
-# What is Modular Agent?
+# Modular Agent
 
 **Modular Agent** is a framework for assembling AI workflows the way you would patch a modular synth.
 Patch together agents that each do one simple thing, and you get real-time pipelines spanning LLMs, databases, messaging, and more.
