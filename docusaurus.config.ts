@@ -81,25 +81,12 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Getting Started',
-              to: '/getting-started/installation',
-            },
-            {
-              label: 'Core Concepts',
-              to: '/concepts/architecture',
-            },
-            {
-              label: 'Building Agents',
-              to: '/building-agents/your-first-agent',
-            },
-          ],
-        },
-        {
           title: 'Repositories',
           items: [
+            {
+              label: 'modular-agent',
+              href: 'https://github.com/modular-agent/modular-agent/',
+            },
             {
               label: 'modular-agent-desktop',
               href: 'https://github.com/modular-agent/modular-agent/tree/main/apps/desktop',
@@ -107,10 +94,6 @@ const config: Config = {
             {
               label: 'modular-agent-core',
               href: 'https://github.com/modular-agent/modular-agent/tree/main/crates/modular-agent-core',
-            },
-            {
-              label: 'All repositories',
-              href: 'https://github.com/modular-agent',
             },
           ],
         },
@@ -128,7 +111,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Modular Agent. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Modular Agent.`,
     },
     prism: {
       theme: prismThemes.github,
