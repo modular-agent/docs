@@ -13,10 +13,10 @@ const config: Config = {
   },
 
   url: 'https://modular-agent.github.io',
-  baseUrl: '/',
+  baseUrl: '/docs/',
 
   organizationName: 'modular-agent',
-  projectName: 'modular-agent-doc',
+  projectName: 'docs',
 
   onBrokenLinks: 'throw',
 
