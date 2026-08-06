@@ -24,14 +24,12 @@ export default defineConfig({
           items: ['getting-started/installation'],
         },
       ],
-      components: { Footer: './src/components/Footer.astro' },
+      components: {
+        Footer: './src/components/Footer.astro',
+        ThemeProvider: './src/components/ThemeProvider.astro',
+        ThemeSelect: './src/components/ThemeSelect.astro',
+      },
       customCss: ['./src/styles/custom.css'],
-      head: [
-        {
-          tag: 'script',
-          content: `if (!localStorage.getItem('starlight-theme')) { localStorage.setItem('starlight-theme', 'dark'); document.documentElement.dataset.theme = 'dark'; }`,
-        },
-      ],
     }),
   ],
 });

@@ -1,16 +1,8 @@
-/* Brand: blue accent from the Modular Agent logo, dark-first per design brief.
-   Starlight applies :root as dark and :root[data-theme='light'] as light. */
-
-/* Dark (Starlight default :root) */
+/* Brand: blue accent from the Modular Agent logo. The site is dark-only
+   (ThemeProvider/ThemeSelect overrides), so only dark variables exist. */
 :root {
   --sl-color-accent-low: #172554;
   --sl-color-accent: #5b8def;
   --sl-color-accent-high: #bcd0f5;
   --sl-color-bg: #111214;
-}
-
-:root[data-theme='light'] {
-  --sl-color-accent-low: #dbe4fb;
-  --sl-color-accent: #2563eb;
-  --sl-color-accent-high: #1e3a8a;
 }
