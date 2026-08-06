@@ -1,16 +1,12 @@
 ---
-id: intro
-slug: /
 title: Modular Agent
-sidebar_position: 1
+description: モジュラーシンセのように AI ワークフローを組み立てる。拡張可能なエージェントをビジュアルにパッチして、リアルタイムのパイプラインを構築できます。
 ---
-
-# Modular Agent
 
 **Modular Agent** は、モジュラーシンセのように AI ワークフローを組み立てるためのフレームワークです。
 それぞれはシンプルな処理しか行わないエージェント同士をパッチして、LLM、データベース、メッセージングなどをまたぐリアルタイムのパイプラインを構築できます。
 
-![ワークフローエディタ](/img/screenshot_editor.jpg)
+![ワークフローエディタ](../../../assets/screenshot_editor.jpg)
 
 ## 特長
 

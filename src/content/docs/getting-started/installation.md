@@ -1,11 +1,9 @@
 ---
 title: Installation
-sidebar_position: 1
+description: Build the Modular Agent desktop app from source, and choose which agent packages are compiled in.
 ---
 
-# Installation
-
-:::info[Developer Preview]
+:::note[Developer Preview]
 Pre-built binaries are not available yet, so build the app from source.
 :::
 

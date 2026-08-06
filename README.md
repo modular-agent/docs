@@ -1,6 +1,6 @@
 # modular-agent-doc
 
-Documentation site for [Modular Agent](https://github.com/modular-agent), built with [Docusaurus](https://docusaurus.io/).
+Documentation site for [Modular Agent](https://github.com/modular-agent), built with [Astro Starlight](https://starlight.astro.build/).
 
 [日本語](README_ja.md)
 
@@ -8,39 +8,37 @@ Documentation site for [Modular Agent](https://github.com/modular-agent), built 
 
 ```bash
 npm install
-npm run start       # dev server at http://localhost:3000
-npm run start:ja    # Japanese dev server at http://localhost:3000/ja/
+npm run dev    # dev server at http://localhost:4321/docs/
 ```
 
-`docusaurus start` serves a single locale at a time. `npm run start` serves English only — there are no `/ja/` routes. Use `npm run start:ja` to preview the Japanese pages in the dev server, or build and serve (below) to get both locales at once.
+The dev server serves every locale at once: English at `/docs/` and Japanese at `/docs/ja/`.
 
 ## Build
 
 ```bash
-npm run build    # static site into build/ (all locales)
-npm run serve    # preview the production build, serving / and /ja/
+npm run build      # static site into dist/ (all locales)
+npm run preview    # preview the production build
 ```
+
+Full-text search (Pagefind) only runs against a production build, so check it with
+`npm run build && npm run preview` rather than in the dev server.
 
 ## Structure
 
-- `docs/` — Documentation pages (Markdown, English is the source of truth)
-- `i18n/ja/` — Japanese translations
-  - `docusaurus-plugin-content-docs/current/` — translated copies of `docs/`
-  - `docusaurus-theme-classic/` — navbar and footer strings
-  - `docusaurus-plugin-content-docs/current.json` — sidebar category labels
-  - `code.json` — built-in theme UI strings
-- `sidebars.ts` — Sidebar structure
-- `docusaurus.config.ts` — Site configuration
-- `static/img/` — Logo, screenshots
+- `src/content/docs/` — Documentation pages (Markdown, English is the source of truth)
+  - `ja/` — Japanese translations, mirroring the English tree
+- `src/content.config.ts` — Content collection definition
+- `src/assets/` — Logo, screenshots (processed by Astro's asset pipeline)
+- `src/styles/custom.css` — Theme colors
+- `src/components/Footer.astro` — Footer override with the repository link columns
+- `public/` — Files copied verbatim to the site root (favicon, `.nojekyll`)
+- `astro.config.mjs` — Site configuration, locales, sidebar
 
 ## Translations
 
-When you update a page under `docs/`, update the matching file under
-`i18n/ja/docusaurus-plugin-content-docs/current/` by hand — nothing detects drift.
+When you update a page under `src/content/docs/`, update the matching file under
+`src/content/docs/ja/` by hand — nothing detects drift.
 
-After adding or renaming navbar items or sidebar categories, regenerate the
-translation scaffold (existing translations are preserved):
-
-```bash
-npm run write-translations -- --locale ja
-```
+Starlight ships Japanese translations for its built-in UI strings, so only the page
+content and the sidebar category labels in `astro.config.mjs` (`translations: { ja: … }`)
+need maintaining.

@@ -1,16 +1,12 @@
 ---
-id: intro
-slug: /
 title: Modular Agent
-sidebar_position: 1
+description: Build AI workflows like a modular synth — patch extensible agents together visually into real-time pipelines.
 ---
-
-# Modular Agent
 
 **Modular Agent** is a framework for assembling AI workflows the way you would patch a modular synth.
 Patch together agents that each do one simple thing, and you get real-time pipelines spanning LLMs, databases, messaging, and more.
 
-![Workflow Editor](/img/screenshot_editor.jpg)
+![Workflow Editor](../../assets/screenshot_editor.jpg)
 
 ## Features
 
