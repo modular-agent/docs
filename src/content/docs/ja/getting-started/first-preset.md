@@ -1,13 +1,9 @@
 ---
 title: はじめてのプリセット
-description: 3 つのエージェントを繋ぎ、LLM のエンドポイントを設定して、はじめてのプリセットを実行する。
+description: 2 つのエージェントを繋いで、はじめてのプリセットを実行する。
 ---
 
-プリセットとは、繋がれたエージェントのグラフを保存したもので、作成・実行・共有の単位になります。ここでは、LLM の Chat API を呼び出すプリセットを作成します。
-
-:::note[LLM のエンドポイントが必要です]
-このプリセットは実際にモデルを呼び出します。OpenAI か Anthropic の API キー、または LM Studio や Ollama などのローカルサーバーを事前に用意してください。設定場所は手順 3 で説明します。
-:::
+プリセットとは、繋がれたエージェントのグラフを保存したもので、作成・実行・共有の単位になります。ここでは、入力した文字列をそのまま表示するだけの、いちばん小さなプリセットを作成します。
 
 ## 1. プリセットを作成する
 
@@ -23,7 +19,7 @@ description: 3 つのエージェントを繋ぎ、LLM のエンドポイント�
 
 ![空のプリセットキャンバス](../../../../assets/getting-started/first-preset/03-empty-canvas.png)
 
-## 2. 入力エージェントと Chat エージェントを追加する
+## 2. 入力エージェントと表示エージェントを追加する
 
 青い格子が表示されているエリアで右クリックし **Add agent** を選びます。ダブルクリック、または `Shift+A` でも同じです。
 
@@ -41,63 +37,28 @@ String Input エージェントが表示されます。
 
 ![キャンバス上の String Input エージェント](../../../../assets/getting-started/first-preset/07-string-input-added.png)
 
-同様に **LLM / Chat** エージェントを追加します。
+同様に **Std / Display / Display Value** エージェントを追加します。
 
-![String Input と Chat の 2 つのエージェント](../../../../assets/getting-started/first-preset/08-chat-added.png)
+## 3. エージェントを繋ぐ
 
-## 3. LLM のエンドポイントを設定する
+ポート間をドラッグして、エージェントを繋ぎます。String Input の `string` を Display Value の `value` へ繋いでください。
 
-LLM のエンドポイントと API キーの設定は、ウィンドウ左下の **Settings** から行います。
+![ワイヤーで繋がれた String Input と Display Value](../../../../assets/getting-started/first-preset/08-agents-wired.png)
 
-![Settings 画面の LLM セクション](../../../../assets/getting-started/first-preset/09-settings-llm.png)
-
-:::tip[ローカル LLM を使う]
-**OpenAI API Base URL** に OpenAI 互換のエンドポイントを指定すると、ローカルの LLM を使えます。上のスクリーンショットでは LM Studio のエンドポイント `http://localhost:1234/v1` を指定しています。
-:::
-
-## 4. 出力エージェントを追加して繋ぐ
-
-プリセット画面に戻り、**Std / Display Value** エージェントを追加します。
-
-![Display Value エージェントを追加したキャンバス](../../../../assets/getting-started/first-preset/10-display-value-added.png)
-
-エージェントを選択すると、右側に設定パネルが開きます。単純な項目はノード上で直接編集することもでき、次の手順ではそちらを使います。
-
-ポート間をドラッグして、エージェントを繋ぎます。String Input の `string` を Chat の `message` へ、Chat の `message` を Display Value の `value` へ繋いでください。Chat は `response`（プロバイダの生のレスポンス）と `event`（ストリーミングイベント）も出力しますが、どちらも繋がなくて構いません。
-
-![ワイヤーで繋がれた 3 つのエージェント](../../../../assets/getting-started/first-preset/11-agents-wired.png)
-
-`model` にはプロバイダ接頭辞付きのモデル名（`openai/…`、`claude/…`、`ollama/…`）を指定します。接頭辞が選ぶのは **Settings** のどの認証情報を使うかであって、モデルの提供元ではありません。そのため下の図のローカルの LM Studio のモデルも `openai/` 接頭辞で書きます。接頭辞がないと _"requires a provider prefix"_ エラーになります。デフォルトは `openai/gpt-5-nano` で、前の図に表示されているのがそれです。
-
-下の図ではレイアウトも調整しています。
-
-![モデル名を指定した Chat エージェント](../../../../assets/getting-started/first-preset/12-model-configured.png)
-
-## 5. プリセットを実行する
+## 4. プリセットを実行する
 
 ウィンドウタイトル上の ▶ ボタンを押すか、右クリックから **Play**（`Ctrl+.`）を選択します。
 
-![Play を選択しているコンテキストメニュー](../../../../assets/getting-started/first-preset/13-play-context-menu.png)
-
 プリセットが実行モードになります。格子が消え、▶ が赤い ■ に変わり、ノードの各項目が動作するようになります。
 
-![実行中のプリセット](../../../../assets/getting-started/first-preset/14-run-mode.png)
+![実行モードのプリセット](../../../../assets/getting-started/first-preset/09-run-mode.png)
 
-String Input に入力すると LLM の Chat API が呼び出され、返答が Display Value に表示されます。
+String Input に `Hello, world!` と入力してみましょう。入力した文字列がそのまま Display Value に表示されます。
 
-![モデルの返答が表示された Display Value](../../../../assets/getting-started/first-preset/15-chat-response.png)
+![「Hello, world!」が表示された Display Value](../../../../assets/getting-started/first-preset/10-hello-world.png)
 
-## 6. 応答が返ってこないとき
-
-失敗したエージェントはタイトルの横に赤いアラートアイコンを表示します。ホバーするとメッセージを読めます。左下の **Logs** には詳細なログがあります。
-
-- **"requires a provider prefix"** — `model` に `openai/`、`claude/`、`ollama/` のいずれの接頭辞も付いていない
-- **接続エラー** — Settings で指定したエンドポイントが起動していないか、ベース URL が誤っている
-- **モデルが見つからない** — 接頭辞の後ろの名前が、そのエンドポイントに存在しない
-- **Settings を変更しても反映されない** — Settings 画面の警告のとおり、実行中のプリセットを再起動する
-
-## 7. 保存する
+## 5. 保存する
 
 **File > Save** でプリセットを保存しておきましょう。停止するには、タイトルバーの赤い ■ を押すか、右クリックメニューから **Stop**（`Ctrl+.`）を選びます。
 
-ここから一箇所だけ変えて実行してみてください。Display Value を別の Std エージェントに差し替える、String Input と Chat の間に別のエージェントを挟む、など。
+次の [Chat エージェントを使う](../chat-preset/) では、2 つのエージェントの間に LLM を挟んで、モデルと会話できるプリセットを作ります。

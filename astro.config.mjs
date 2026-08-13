@@ -21,7 +21,11 @@ export default defineConfig({
         {
           label: "Getting Started",
           translations: { ja: "はじめる" },
-          items: ["getting-started/installation", "getting-started/first-preset"],
+          items: [
+            "getting-started/installation",
+            "getting-started/first-preset",
+            "getting-started/chat-preset",
+          ],
         },
       ],
       components: {
