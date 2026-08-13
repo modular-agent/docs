@@ -1,9 +1,13 @@
 ---
 title: Your First Preset
-description: Build and run a preset that calls an LLM chat API by wiring a String Input, a Chat agent, and a Display Value agent together.
+description: Wire three agents together, point Modular Agent at an LLM endpoint, and run your first preset.
 ---
 
-This walkthrough builds a small preset that calls an LLM chat API.
+A preset is a saved graph of connected agents — the unit you build, run, and share. This walkthrough builds one that calls an LLM chat API.
+
+:::note[You need an LLM endpoint]
+This preset calls a real model. Have one ready before you start: an OpenAI or Anthropic API key, or a local server such as LM Studio or Ollama. Step 3 shows where each one goes.
+:::
 
 ## 1. Create a Preset
 
@@ -57,11 +61,15 @@ Back on the preset canvas, add **Std / Display Value**.
 
 ![The Display Value agent added to the canvas](../../../assets/getting-started/first-preset/10-display-value-added.png)
 
-Connect the three agents by dragging between their ports.
+Selecting an agent opens its config panel on the right. Simple fields are editable directly on the node too, which is what the next step does.
+
+Connect the agents by dragging between their ports: `string` on String Input to `message` on Chat, then `message` on Chat to `value` on Display Value. Chat also emits `response` (the raw provider payload) and `event` (streaming events) — leave both unconnected.
 
 ![The three agents connected by wires](../../../assets/getting-started/first-preset/11-agents-wired.png)
 
-Set the `model` field if your endpoint needs it. The layout below is also tidied up.
+The `model` field takes a provider-prefixed name — `openai/…`, `claude/…`, or `ollama/…`. The prefix selects which credentials from **Settings** to use, not who hosts the model, so the local LM Studio model below is still written with the `openai/` prefix. Without a prefix the agent fails with *"requires a provider prefix."* The default is `openai/gpt-5-nano`, which is what the previous screenshot shows.
+
+The layout below is also tidied up.
 
 ![The Chat agent with a model name filled in](../../../assets/getting-started/first-preset/12-model-configured.png)
 
@@ -71,7 +79,7 @@ Press the ▶ button in the title bar, or right-click and choose **Play** (`Ctrl
 
 ![The context menu with Play highlighted](../../../assets/getting-started/first-preset/13-play-context-menu.png)
 
-The preset switches to run mode.
+The preset switches to run mode: the grid disappears, ▶ becomes a red ■, and the node fields go live.
 
 ![The preset running](../../../assets/getting-started/first-preset/14-run-mode.png)
 
@@ -79,6 +87,17 @@ Type into String Input to call the chat API. The reply arrives in Display Value.
 
 ![Display Value showing the model's reply](../../../assets/getting-started/first-preset/15-chat-response.png)
 
-## 6. Save
+## 6. When Nothing Comes Back
 
-Save the preset with **File > Save**.
+A failing agent shows a red alert icon beside its title — hover it for the message. **Logs**, at the bottom left, has the full trace.
+
+- **"requires a provider prefix"** — the `model` field is missing its `openai/`, `claude/`, or `ollama/` prefix
+- **Connection refused** — the endpoint in Settings is not running, or the base URL is wrong
+- **Model not found** — the name after the prefix does not exist at that endpoint
+- **Settings edits appear to do nothing** — restart the running preset, as the Settings screen warns
+
+## 7. Save
+
+Save the preset with **File > Save**. To stop it, press the red ■ in the title bar or choose **Stop** (`Ctrl+.`) from the right-click menu.
+
+Now change one thing and run it again — swap in a different Std agent, or put another agent between String Input and Chat.
