@@ -67,7 +67,7 @@ LLM のエンドポイントと API キーの設定は、ウィンドウ左下�
 
 ![ワイヤーで繋がれた 3 つのエージェント](../../../../assets/getting-started/first-preset/11-agents-wired.png)
 
-`model` にはプロバイダ接頭辞付きのモデル名（`openai/…`、`claude/…`、`ollama/…`）を指定します。接頭辞が選ぶのは **Settings** のどの認証情報を使うかであって、モデルの提供元ではありません。そのため下の図のローカルの LM Studio のモデルも `openai/` 接頭辞で書きます。接頭辞がないと *"requires a provider prefix"* エラーになります。デフォルトは `openai/gpt-5-nano` で、前の図に表示されているのがそれです。
+`model` にはプロバイダ接頭辞付きのモデル名（`openai/…`、`claude/…`、`ollama/…`）を指定します。接頭辞が選ぶのは **Settings** のどの認証情報を使うかであって、モデルの提供元ではありません。そのため下の図のローカルの LM Studio のモデルも `openai/` 接頭辞で書きます。接頭辞がないと _"requires a provider prefix"_ エラーになります。デフォルトは `openai/gpt-5-nano` で、前の図に表示されているのがそれです。
 
 下の図ではレイアウトも調整しています。
 

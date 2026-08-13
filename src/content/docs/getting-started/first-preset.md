@@ -67,7 +67,7 @@ Connect the agents by dragging between their ports: `string` on String Input to 
 
 ![The three agents connected by wires](../../../assets/getting-started/first-preset/11-agents-wired.png)
 
-The `model` field takes a provider-prefixed name — `openai/…`, `claude/…`, or `ollama/…`. The prefix selects which credentials from **Settings** to use, not who hosts the model, so the local LM Studio model below is still written with the `openai/` prefix. Without a prefix the agent fails with *"requires a provider prefix."* The default is `openai/gpt-5-nano`, which is what the previous screenshot shows.
+The `model` field takes a provider-prefixed name — `openai/…`, `claude/…`, or `ollama/…`. The prefix selects which credentials from **Settings** to use, not who hosts the model, so the local LM Studio model below is still written with the `openai/` prefix. Without a prefix the agent fails with _"requires a provider prefix."_ The default is `openai/gpt-5-nano`, which is what the previous screenshot shows.
 
 The layout below is also tidied up.
 

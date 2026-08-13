@@ -1,98 +1,98 @@
 ---
-import Default from '@astrojs/starlight/components/Footer.astro';
+import Default from "@astrojs/starlight/components/Footer.astro";
 
-const isJa = Astro.currentLocale === 'ja';
+const isJa = Astro.currentLocale === "ja";
 
 const columns = [
-	{
-		title: isJa ? 'リポジトリ' : 'Repositories',
-		items: [
-			{ label: 'modular-agent', href: 'https://github.com/modular-agent/modular-agent/' },
-			{
-				label: 'modular-agent-desktop',
-				href: 'https://github.com/modular-agent/modular-agent/tree/main/apps/desktop',
-			},
-			{
-				label: 'modular-agent-core',
-				href: 'https://github.com/modular-agent/modular-agent/tree/main/crates/modular-agent-core',
-			},
-		],
-	},
-	{
-		title: isJa ? 'その他' : 'More',
-		items: [
-			{ label: 'crates.io', href: 'https://crates.io/crates/modular-agent-core' },
-			{ label: 'docs.rs', href: 'https://docs.rs/modular-agent-core' },
-		],
-	},
+  {
+    title: isJa ? "リポジトリ" : "Repositories",
+    items: [
+      { label: "modular-agent", href: "https://github.com/modular-agent/modular-agent/" },
+      {
+        label: "modular-agent-desktop",
+        href: "https://github.com/modular-agent/modular-agent/tree/main/apps/desktop",
+      },
+      {
+        label: "modular-agent-core",
+        href: "https://github.com/modular-agent/modular-agent/tree/main/crates/modular-agent-core",
+      },
+    ],
+  },
+  {
+    title: isJa ? "その他" : "More",
+    items: [
+      { label: "crates.io", href: "https://crates.io/crates/modular-agent-core" },
+      { label: "docs.rs", href: "https://docs.rs/modular-agent-core" },
+    ],
+  },
 ];
 ---
 
 <Default><slot /></Default>
 
 <div class="site-footer">
-	<div class="columns">
-		{
-			columns.map((column) => (
-				<div class="column">
-					<h2>{column.title}</h2>
-					<ul>
-						{column.items.map((item) => (
-							<li>
-								<a href={item.href}>{item.label}</a>
-							</li>
-						))}
-					</ul>
-				</div>
-			))
-		}
-	</div>
-	<p class="copyright">&copy; {new Date().getFullYear()} Modular Agent.</p>
+  <div class="columns">
+    {
+      columns.map((column) => (
+        <div class="column">
+          <h2>{column.title}</h2>
+          <ul>
+            {column.items.map((item) => (
+              <li>
+                <a href={item.href}>{item.label}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+  <p class="copyright">&copy; {new Date().getFullYear()} Modular Agent.</p>
 </div>
 
 <style>
-	.site-footer {
-		margin-top: 3rem;
-		padding-top: 1.5rem;
-		border-top: 1px solid var(--sl-color-hairline);
-		font-size: var(--sl-text-sm);
-		color: var(--sl-color-gray-3);
-	}
+  .site-footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--sl-color-hairline);
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-3);
+  }
 
-	.columns {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 1.5rem 3rem;
-	}
+  .columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 3rem;
+  }
 
-	.column h2 {
-		margin: 0 0 0.5rem;
-		font-size: var(--sl-text-sm);
-		font-weight: 600;
-		color: var(--sl-color-white);
-	}
+  .column h2 {
+    margin: 0 0 0.5rem;
+    font-size: var(--sl-text-sm);
+    font-weight: 600;
+    color: var(--sl-color-white);
+  }
 
-	.column ul {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		display: flex;
-		flex-direction: column;
-		gap: 0.25rem;
-	}
+  .column ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
 
-	.column a {
-		color: var(--sl-color-gray-3);
-		text-decoration: none;
-	}
+  .column a {
+    color: var(--sl-color-gray-3);
+    text-decoration: none;
+  }
 
-	.column a:hover {
-		color: var(--sl-color-white);
-		text-decoration: underline;
-	}
+  .column a:hover {
+    color: var(--sl-color-white);
+    text-decoration: underline;
+  }
 
-	.copyright {
-		margin: 1.5rem 0 0;
-		font-size: var(--sl-text-xs);
-	}
+  .copyright {
+    margin: 1.5rem 0 0;
+    font-size: var(--sl-text-xs);
+  }
 </style>
