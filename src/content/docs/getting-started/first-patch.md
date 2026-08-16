@@ -1,0 +1,64 @@
+---
+title: Your First Patch
+description: Wire two agents together and run your first patch.
+---
+
+A patch is a saved graph of connected agents — the unit you build, run, and share. This walkthrough builds the smallest one possible: it just displays whatever you type.
+
+## 1. Create a Patch
+
+The first launch opens the Open Patches window.
+
+![The Open Patches window with no patches yet](../../../assets/getting-started/first-patch/01-open-patches-empty.png)
+
+Click **+ New Patch**, type a name such as `first patch`, and press **New**.
+
+![The New Patch dialog with the name "first patch" entered](../../../assets/getting-started/first-patch/02-new-patch-dialog.png)
+
+The patch opens on an empty canvas.
+
+![An empty patch canvas](../../../assets/getting-started/first-patch/03-empty-canvas.png)
+
+## 2. Add the Input and Display Agents
+
+Right-click the blue grid and choose **Add agent** — double-clicking the canvas or pressing `Shift+A` does the same thing.
+
+![The canvas context menu with Add agent highlighted](../../../assets/getting-started/first-patch/04-canvas-context-menu.png)
+
+The agent list opens, grouped by package.
+
+![The agent list showing package categories](../../../assets/getting-started/first-patch/05-agent-list.png)
+
+Type in the search box to narrow it down, then pick **Std / Input / String Input**.
+
+![The agent list filtered by the search term "str"](../../../assets/getting-started/first-patch/06-agent-search-string-input.png)
+
+The String Input agent appears on the canvas.
+
+![The String Input agent on the canvas](../../../assets/getting-started/first-patch/07-string-input-added.png)
+
+Add **Std / Display / Display Value** the same way.
+
+## 3. Wire Them Up
+
+Connect the agents by dragging between their ports: `string` on String Input to `value` on Display Value.
+
+![String Input and Display Value connected by a wire](../../../assets/getting-started/first-patch/08-agents-wired.png)
+
+## 4. Run the Patch
+
+Press the ▶ button in the title bar, or right-click and choose **Play** (`Ctrl+.`).
+
+The patch switches to run mode: the grid disappears, ▶ becomes a red ■, and the node fields go live.
+
+![The patch in run mode](../../../assets/getting-started/first-patch/09-run-mode.png)
+
+Type `Hello, world!` into String Input. The same string appears in Display Value.
+
+![Display Value showing "Hello, world!"](../../../assets/getting-started/first-patch/10-hello-world.png)
+
+## 5. Save
+
+Save the patch with **File &gt; Save**. To stop it, press the red ■ in the title bar or choose **Stop** (`Ctrl+.`) from the right-click menu.
+
+Next, [Using the Chat Agent](../chat-patch/) puts an LLM between these two agents and turns the patch into a conversation with a model.

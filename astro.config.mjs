@@ -23,8 +23,8 @@ export default defineConfig({
           translations: { ja: "はじめる" },
           items: [
             "getting-started/installation",
-            "getting-started/first-preset",
-            "getting-started/chat-preset",
+            "getting-started/first-patch",
+            "getting-started/chat-patch",
           ],
         },
       ],
