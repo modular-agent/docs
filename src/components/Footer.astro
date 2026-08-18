@@ -47,7 +47,10 @@ const columns = [
       ))
     }
   </div>
-  <p class="copyright">&copy; {new Date().getFullYear()} Modular Agent.</p>
+  <p class="copyright">
+    &copy; {new Date().getFullYear()}
+    <a href="https://www.lumilab.jp/">Luminous Laboratory</a>.
+  </p>
 </div>
 
 <style>
@@ -94,5 +97,15 @@ const columns = [
   .copyright {
     margin: 1.5rem 0 0;
     font-size: var(--sl-text-xs);
+  }
+
+  .copyright a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .copyright a:hover {
+    color: var(--sl-color-white);
+    text-decoration: underline;
   }
 </style>
