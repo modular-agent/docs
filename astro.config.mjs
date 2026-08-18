@@ -10,7 +10,13 @@ export default defineConfig({
       title: "Modular Agent",
       logo: { src: "./src/assets/logo.png", alt: "Modular Agent Logo" },
       favicon: "/favicon.ico",
-      social: [{ icon: "github", label: "GitHub", href: "https://github.com/modular-agent" }],
+      social: [
+        {
+          icon: "github",
+          label: "GitHub",
+          href: "https://github.com/modular-agent/modular-agent/",
+        },
+      ],
       defaultLocale: "root",
       locales: {
         root: { label: "English", lang: "en" },
