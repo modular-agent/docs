@@ -69,3 +69,34 @@
 .sl-markdown-content > p:last-child:has(> img) {
   margin-top: 4rem;
 }
+
+/* Splash pages have no sidebar drawer, which is where Starlight puts the
+   mobile language select — surface the header copy instead. The GitHub
+   icon stays hidden to keep the narrow header uncluttered (the footer
+   links to the repos). The select collapses to its translate icon (the
+   locale labels only appear in the dropdown), sitting at the far edge
+   after the search icon. */
+@media (max-width: 49.999rem) {
+  :root:not([data-has-sidebar]) .header .right-group {
+    display: flex;
+    order: 2;
+  }
+  :root:not([data-has-sidebar]) .header > .print\:hidden:not(.right-group) {
+    order: 1;
+    margin-inline-start: auto;
+  }
+  :root:not([data-has-sidebar]) .header .right-group .social-icons {
+    display: none;
+  }
+  :root:not([data-has-sidebar]) .header .right-group starlight-lang-select label {
+    --sl-label-icon-size: 1.25rem;
+  }
+  :root:not([data-has-sidebar]) .header .right-group starlight-lang-select select {
+    width: 2.25rem;
+    padding-inline-end: 0;
+    color: transparent;
+  }
+  :root:not([data-has-sidebar]) .header .right-group starlight-lang-select .caret {
+    display: none;
+  }
+}
