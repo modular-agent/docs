@@ -47,9 +47,9 @@ Connect the agents by dragging between their ports: `string` on String Input to 
 
 ## 4. Run the Patch
 
-Press the ▶ button in the title bar, or right-click and choose **Play** (`Ctrl+.`).
+Switch on the **Run** toggle in the title bar, or right-click and choose **Play** (`Ctrl+.`).
 
-The patch switches to run mode: the grid disappears, ▶ becomes a red ■, and the node fields go live.
+The patch switches to run mode: the grid disappears, the toggle lights up, and the node fields go live.
 
 ![The patch in run mode](../../../assets/getting-started/first-patch/09-run-mode.png)
 
@@ -59,6 +59,6 @@ Type `Hello, world!` into String Input. The same string appears in Display Value
 
 ## 5. Save
 
-Save the patch with **File &gt; Save**. To stop it, press the red ■ in the title bar or choose **Stop** (`Ctrl+.`) from the right-click menu.
+Save the patch with **File &gt; Save**. To stop it, switch the **Run** toggle off or choose **Stop** (`Ctrl+.`) from the right-click menu.
 
 Next, [Using the Chat Agent](../chat-patch/) puts an LLM between these two agents and turns the patch into a conversation with a model.

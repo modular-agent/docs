@@ -43,7 +43,7 @@ The layout below is also tidied up.
 
 ## 4. Run the Patch
 
-Press the ▶ button in the title bar, or right-click and choose **Play** (`Ctrl+.`).
+Switch on the **Run** toggle in the title bar, or right-click and choose **Play** (`Ctrl+.`).
 
 ![The context menu with Play highlighted](../../../assets/getting-started/chat-patch/06-play-context-menu.png)
 
