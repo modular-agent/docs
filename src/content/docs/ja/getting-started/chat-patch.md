@@ -6,12 +6,12 @@ description: はじめてのパッチに Chat エージェントを追加し、L
 [はじめてのパッチ](../first-patch/)では、入力した文字列をそのまま表示しました。ここではその続きとして、String Input と Display Value の間に **Chat** エージェントを挟み、LLM の Chat API を呼び出すパッチに作り変えます。
 
 :::note[LLM のエンドポイントが必要です]
-このパッチは実際にモデルを呼び出します。OpenAI か Anthropic の API キー、または LM Studio や Ollama などのローカルサーバーを事前に用意してください。設定場所は手順 2 で説明します。
+このパッチは実際にモデルを呼び出します。OpenAI か Anthropic の API キー、または LM Studio や Ollama などのローカルサーバーを事前に用意してください。
 :::
 
 ## 1. Chat エージェントを追加する
 
-[前のガイド](../first-patch/)で保存した `first patch` をそのまま使います。閉じてしまった場合は Open Patches ウィンドウから開き直してください。ここに **LLM / Chat** エージェントを 1 つ追加します。
+[前のガイド](../first-patch/)の `first patch` から続けます。ここに **LLM / Chat** エージェントを 1 つ追加します。
 
 ![パッチに追加した Chat エージェント（拡大表示）](../../../../assets/getting-started/chat-patch/01-chat-added.png)
 
@@ -21,15 +21,15 @@ LLM のエンドポイントと API キーの設定は、ウィンドウ左下�
 
 ![Settings 画面の LLM セクション](../../../../assets/getting-started/chat-patch/02-settings-llm.png)
 
-:::tip[ローカル LLM を使う]
+:::tip[OpenAI互換のローカル LLM を使う]
 **OpenAI API Base URL** に OpenAI 互換のエンドポイントを指定すると、ローカルの LLM を使えます。上のスクリーンショットでは LM Studio のエンドポイント `http://localhost:1234/v1` を指定しています。
 :::
 
 ## 3. 配線を変更する
 
-パッチ画面に戻ります。前のガイドで繋いだワイヤーは String Input から Display Value へ直接伸びたままなので、クリックして選択し `Delete` キーで削除します。
+パッチ画面に戻ります。前のガイドで繋いだワイヤーは String Input から Display Value へ直接伸びたままなので、ワイヤーをクリックして選択し `Delete` キーで削除します。
 
-次に、ポート間をドラッグして Chat を経由するように繋ぎ直します。String Input の `string` を Chat の `message` へ、Chat の `message` を Display Value の `value` へ繋いでください。Chat は `response`（プロバイダの生のレスポンス）と `event`（ストリーミングイベント）も出力しますが、どちらも繋がなくて構いません。
+次に、ポート間をドラッグして Chat を経由するように繋ぎ直します。String Input の `string` を Chat の `message` へ、Chat の `message` を Display Value の `value` へ繋ぎます。
 
 ![ワイヤーで繋がれた 3 つのエージェント](../../../../assets/getting-started/chat-patch/04-agents-wired.png)
 
@@ -67,5 +67,3 @@ String Input に入力すると LLM の Chat API が呼び出され、返答が 
 ## 6. 保存する
 
 **File > Save** でパッチを保存しておきましょう。
-
-ここから一箇所だけ変えて実行してみてください。Display Value を別の Std エージェントに差し替える、String Input と Chat の間に別のエージェントを挟む、など。

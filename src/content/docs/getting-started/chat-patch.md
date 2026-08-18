@@ -6,12 +6,12 @@ description: Add a Chat agent to your first patch, point Modular Agent at an LLM
 [Your First Patch](../first-patch/) displayed whatever you typed. This walkthrough continues from that patch: it puts a **Chat** agent between String Input and Display Value, turning the patch into a call to an LLM chat API.
 
 :::note[You need an LLM endpoint]
-This patch calls a real model. Have one ready before you start: an OpenAI or Anthropic API key, or a local server such as LM Studio or Ollama. Step 2 shows where each one goes.
+This patch calls a real model. Have one ready before you start: an OpenAI or Anthropic API key, or a local server such as LM Studio or Ollama.
 :::
 
 ## 1. Add the Chat Agent
 
-Keep working in the `first patch` you saved in [the previous guide](../first-patch/) — if you closed it, reopen it from the Open Patches window. Add one agent: **LLM / Chat**.
+Continue from the `first patch` in [the previous guide](../first-patch/). Add one agent: **LLM / Chat**.
 
 ![The Chat agent added to the patch, zoomed in](../../../assets/getting-started/chat-patch/01-chat-added.png)
 
@@ -21,15 +21,15 @@ The LLM endpoint and API key live in **Settings**, at the bottom left of the win
 
 ![The LLM section of the Settings screen](../../../assets/getting-started/chat-patch/02-settings-llm.png)
 
-:::tip[Using a local LLM]
+:::tip[Using an OpenAI-compatible local LLM]
 Point **OpenAI API Base URL** at any OpenAI-compatible endpoint to run against a local model. The screenshot above uses LM Studio on `http://localhost:1234/v1`.
 :::
 
 ## 3. Rewire the Agents
 
-Back on the patch canvas, the wire from the previous guide still runs straight from String Input to Display Value. Click it to select it and press `Delete` to remove it.
+Back on the patch canvas, the wire from the previous guide still runs straight from String Input to Display Value. Click the wire to select it and press `Delete` to remove it.
 
-Then wire the agents through Chat by dragging between their ports: `string` on String Input to `message` on Chat, then `message` on Chat to `value` on Display Value. Chat also emits `response` (the raw provider payload) and `event` (streaming events) — leave both unconnected.
+Then wire the agents through Chat by dragging between their ports: `string` on String Input to `message` on Chat, then `message` on Chat to `value` on Display Value.
 
 ![The three agents connected by wires](../../../assets/getting-started/chat-patch/04-agents-wired.png)
 
@@ -67,5 +67,3 @@ A failing agent shows a red alert icon beside its title — hover it for the mes
 ## 6. Save
 
 Save the patch with **File &gt; Save**.
-
-Now change one thing and run it again — swap in a different Std agent, or put another agent between String Input and Chat.
