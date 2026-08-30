@@ -1,15 +1,35 @@
 ---
 title: インストール
-description: Modular Agent のデスクトップアプリをソースからビルドし、ミニマルビルドにエージェントパッケージを追加する手順。
+description: ワンコマンドインストーラーで Modular Agent を導入する手順と、デスクトップアプリをソースからビルドしてエージェントパッケージを追加する手順。
 ---
 
 ## 前提条件
 
-- [Rust](https://www.rust-lang.org/ja/tools/install) 1.85 以上
-- [Node.js](https://nodejs.org/ja) 20 以上
-- [Tauri の前提条件](https://v2.tauri.app/ja/start/prerequisites/)
+[Tauri の前提条件](https://v2.tauri.app/ja/start/prerequisites/)(Rust 1.85 以上、Node.js 20 以上、プラットフォームのツールチェーン)をインストールしてください。
 
-## デスクトップアプリをビルドする
+## クイックインストール
+
+ワンコマンドでリポジトリのクローンからソースビルドまで行えます。[デスクトップアプリ](https://github.com/modular-agent/modular-agent/tree/main/apps/desktop)と[CLI](https://github.com/modular-agent/modular-agent/tree/main/apps/cli) の
+どちらをビルドするか、推奨エージェントパッケージを含めるかを選べます。
+
+デスクトップアプリの初回ビルドは 20〜40 分・約 10 GB のディスクを使います:
+
+```bash
+# macOS / Linux
+curl -fsSL https://raw.githubusercontent.com/modular-agent/modular-agent/main/scripts/install.sh | sh
+```
+
+```powershell
+# Windows (PowerShell)
+irm https://raw.githubusercontent.com/modular-agent/modular-agent/main/scripts/install.ps1 | iex
+```
+
+アップデートするには、同じディレクトリで同じコマンドをもう一度実行してください。
+既存のクローンをpullし、同じ構成でリビルドします。
+
+## 手動でデスクトップアプリをビルドする
+
+上記のコマンドを用いずに手動でビルドする場合の手順は以下の通りです。
 
 [modular-agent](https://github.com/modular-agent/modular-agent) をクローンしてビルドします。
 
@@ -38,7 +58,7 @@ OpenAI / Ollama 連携)— のみです。それ以外の Web スクレイピン
 
 ### 開発モード
 
-開発中に編集と実行を素早く繰り返したい場合は、次のコマンドを使います。
+開発モードでビルドし、編集と実行を素早く繰り返したい場合は、`npm run tauri build` の代わりに次のコマンドを使います。
 
 ```bash
 npm run tauri dev
@@ -59,15 +79,15 @@ cd ..
 
 例えば、[github.com/modular-agent](https://github.com/modular-agent/) から以下のエージェントをクローンできます。
 
-| リポジトリ | エージェント |
-| --- | --- |
-| [modular-agent-lifelog](https://github.com/modular-agent/modular-agent-lifelog) | 画面キャプチャ・ウィンドウ追跡エージェント |
-| [modular-agent-mattermost](https://github.com/modular-agent/modular-agent-mattermost) | Mattermost メッセージングエージェント |
-| [modular-agent-monty](https://github.com/modular-agent/modular-agent-monty) | Monty スクリプトエージェント |
-| [modular-agent-slack](https://github.com/modular-agent/modular-agent-slack) | Slack メッセージングエージェント |
-| [modular-agent-sqlx](https://github.com/modular-agent/modular-agent-sqlx) | SQL データベースエージェント(PostgreSQL、MySQL、SQLite) |
-| [modular-agent-web](https://github.com/modular-agent/modular-agent-web) | Web/HTTP・スクレイピング・検索・YouTube エージェント |
-| [modular-agent-zapcode](https://github.com/modular-agent/modular-agent-zapcode) | ZapCode TypeScript スクリプトエージェント |
+| リポジトリ                                                                            | エージェント                                            |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| [modular-agent-lifelog](https://github.com/modular-agent/modular-agent-lifelog)       | 画面キャプチャ・ウィンドウ追跡エージェント              |
+| [modular-agent-mattermost](https://github.com/modular-agent/modular-agent-mattermost) | Mattermost メッセージングエージェント                   |
+| [modular-agent-monty](https://github.com/modular-agent/modular-agent-monty)           | Monty スクリプトエージェント                            |
+| [modular-agent-slack](https://github.com/modular-agent/modular-agent-slack)           | Slack メッセージングエージェント                        |
+| [modular-agent-sqlx](https://github.com/modular-agent/modular-agent-sqlx)             | SQL データベースエージェント(PostgreSQL、MySQL、SQLite) |
+| [modular-agent-web](https://github.com/modular-agent/modular-agent-web)               | Web/HTTP・スクレイピング・検索・YouTube エージェント    |
+| [modular-agent-zapcode](https://github.com/modular-agent/modular-agent-zapcode)       | ZapCode TypeScript スクリプトエージェント               |
 
 次に、リポジトリルートで **ma-config** ウィザードを実行し、エージェントと feature を
 選択します。ウィザードに表示されるのはクローン済みのパッケージだけです。

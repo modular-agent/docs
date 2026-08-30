@@ -1,15 +1,39 @@
 ---
 title: Installation
-description: Build the Modular Agent desktop app from source, and add agent packages beyond the minimal build.
+description: Install Modular Agent with the one-command installer, or build the desktop app from source and add agent packages.
 ---
 
 ## Prerequisites
 
-- [Rust](https://www.rust-lang.org/tools/install) 1.85+
-- [Node.js](https://nodejs.org/) 20+
-- [Tauri Prerequisites](https://v2.tauri.app/start/prerequisites/)
+Install the [Tauri prerequisites](https://v2.tauri.app/start/prerequisites/)
+(Rust 1.85+, Node.js 20+, and the platform toolchain).
 
-## Build the Desktop App
+## Quick Install
+
+One command clones the repository and builds from source. You choose whether to
+build the
+[desktop app](https://github.com/modular-agent/modular-agent/tree/main/apps/desktop)
+or the [CLI](https://github.com/modular-agent/modular-agent/tree/main/apps/cli),
+and whether to include the recommended agent packages.
+
+A first desktop build typically takes 20-40 minutes and ~10 GB of disk:
+
+```bash
+# macOS / Linux
+curl -fsSL https://raw.githubusercontent.com/modular-agent/modular-agent/main/scripts/install.sh | sh
+```
+
+```powershell
+# Windows (PowerShell)
+irm https://raw.githubusercontent.com/modular-agent/modular-agent/main/scripts/install.ps1 | iex
+```
+
+To update later, run the same command again from the same directory: it pulls
+the existing clones and rebuilds with the same configuration.
+
+## Build the Desktop App Manually
+
+If you prefer not to use the command above, the manual steps are as follows.
 
 Clone and build [modular-agent](https://github.com/modular-agent/modular-agent):
 
@@ -38,7 +62,8 @@ comes from separate agent packages.
 
 ### Development Mode
 
-For a faster edit-run cycle while developing:
+To build in development mode for a faster edit-run cycle, use the following
+instead of `npm run tauri build`:
 
 ```bash
 npm run tauri dev
@@ -60,15 +85,15 @@ cd ..
 For example, the following agents can be cloned from
 [github.com/modular-agent](https://github.com/modular-agent/):
 
-| Repository | Agents |
-| --- | --- |
-| [modular-agent-lifelog](https://github.com/modular-agent/modular-agent-lifelog) | Screen capture, window tracking agents |
-| [modular-agent-mattermost](https://github.com/modular-agent/modular-agent-mattermost) | Mattermost messaging agents |
-| [modular-agent-monty](https://github.com/modular-agent/modular-agent-monty) | Monty script agents |
-| [modular-agent-slack](https://github.com/modular-agent/modular-agent-slack) | Slack messaging agents |
-| [modular-agent-sqlx](https://github.com/modular-agent/modular-agent-sqlx) | SQL database agents (PostgreSQL, MySQL, SQLite) |
-| [modular-agent-web](https://github.com/modular-agent/modular-agent-web) | Web/HTTP, scraping, search, YouTube agents |
-| [modular-agent-zapcode](https://github.com/modular-agent/modular-agent-zapcode) | ZapCode TypeScript script agents |
+| Repository                                                                            | Agents                                          |
+| ------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| [modular-agent-lifelog](https://github.com/modular-agent/modular-agent-lifelog)       | Screen capture, window tracking agents          |
+| [modular-agent-mattermost](https://github.com/modular-agent/modular-agent-mattermost) | Mattermost messaging agents                     |
+| [modular-agent-monty](https://github.com/modular-agent/modular-agent-monty)           | Monty script agents                             |
+| [modular-agent-slack](https://github.com/modular-agent/modular-agent-slack)           | Slack messaging agents                          |
+| [modular-agent-sqlx](https://github.com/modular-agent/modular-agent-sqlx)             | SQL database agents (PostgreSQL, MySQL, SQLite) |
+| [modular-agent-web](https://github.com/modular-agent/modular-agent-web)               | Web/HTTP, scraping, search, YouTube agents      |
+| [modular-agent-zapcode](https://github.com/modular-agent/modular-agent-zapcode)       | ZapCode TypeScript script agents                |
 
 Then run the **ma-config** wizard from the repository root to select agents and their
 features — only cloned packages are offered:
