@@ -1,9 +1,9 @@
 ---
 title: Your First Patch
-description: Wire two agents together and run your first patch.
+description: Wire two modules together and run your first patch.
 ---
 
-A patch is a saved graph of connected agents — the unit you build, run, and share. This walkthrough builds the smallest one possible: it just displays whatever you type.
+A patch is a saved graph of connected modules — the unit you build, run, and share. This walkthrough builds the smallest one possible: it just displays whatever you type.
 
 ## 1. Create a Patch
 
@@ -19,31 +19,31 @@ The patch opens on an empty canvas.
 
 ![An empty patch canvas](../../../assets/getting-started/first-patch/03-empty-canvas.png)
 
-## 2. Add the Input and Display Agents
+## 2. Add the Input and Display Modules
 
-Right-click the blue grid and choose **Add agent** — double-clicking the canvas or pressing `Shift+A` does the same thing.
+Right-click the blue grid and choose **Add module** — double-clicking the canvas or pressing `Shift+A` does the same thing.
 
-![The canvas context menu with Add agent highlighted](../../../assets/getting-started/first-patch/04-canvas-context-menu.png)
+![The canvas context menu with Add module highlighted](../../../assets/getting-started/first-patch/04-canvas-context-menu.png)
 
-The agent list opens, grouped by package.
+The module list opens, grouped by package.
 
-![The agent list showing package categories](../../../assets/getting-started/first-patch/05-agent-list.png)
+![The module list showing package categories](../../../assets/getting-started/first-patch/05-module-list.png)
 
 Type in the search box to narrow it down, then pick **Std / Input / String Input**.
 
-![The agent list filtered by the search term "str"](../../../assets/getting-started/first-patch/06-agent-search-string-input.png)
+![The module list filtered by the search term "str"](../../../assets/getting-started/first-patch/06-module-search-string-input.png)
 
-The String Input agent appears on the canvas.
+The String Input module appears on the canvas.
 
-![The String Input agent on the canvas](../../../assets/getting-started/first-patch/07-string-input-added.png)
+![The String Input module on the canvas](../../../assets/getting-started/first-patch/07-string-input-added.png)
 
 Add **Std / Display / Display Value** the same way.
 
 ## 3. Wire Them Up
 
-Connect the agents by dragging between their ports: `string` on String Input to `value` on Display Value.
+Connect the modules by dragging between their ports: `string` on String Input to `value` on Display Value.
 
-![String Input and Display Value connected by a wire](../../../assets/getting-started/first-patch/08-agents-wired.png)
+![String Input and Display Value connected by a wire](../../../assets/getting-started/first-patch/08-modules-wired.png)
 
 ## 4. Run the Patch
 
@@ -61,4 +61,4 @@ Type `Hello, world!` into String Input. The same string appears in Display Value
 
 Save the patch with **File &gt; Save**. To stop it, switch the **Run** toggle off or choose **Stop** (`Ctrl+.`) from the right-click menu.
 
-Next, [Using the Chat Agent](../chat-patch/) puts an LLM between these two agents and turns the patch into a conversation with a model.
+Next, [Using the Chat Module](../chat-patch/) puts an LLM between these two modules and turns the patch into a conversation with a model.

@@ -1,19 +1,19 @@
 ---
-title: Chat エージェントを使う
-description: はじめてのパッチに Chat エージェントを追加し、LLM のエンドポイントを設定して、モデルと会話するパッチを実行する。
+title: Chat モジュールを使う
+description: はじめてのパッチに Chat モジュールを追加し、LLM のエンドポイントを設定して、モデルと会話するパッチを実行する。
 ---
 
-[はじめてのパッチ](../first-patch/)では、入力した文字列をそのまま表示しました。ここではその続きとして、String Input と Display Value の間に **Chat** エージェントを挟み、LLM の Chat API を呼び出すパッチに作り変えます。
+[はじめてのパッチ](../first-patch/)では、入力した文字列をそのまま表示しました。ここではその続きとして、String Input と Display Value の間に **Chat** モジュールを挟み、LLM の Chat API を呼び出すパッチに作り変えます。
 
 :::note[LLM のエンドポイントが必要です]
 このパッチは実際にモデルを呼び出します。OpenAI か Anthropic の API キー、または LM Studio や Ollama などのローカルサーバーを事前に用意してください。
 :::
 
-## 1. Chat エージェントを追加する
+## 1. Chat モジュールを追加する
 
-[前のガイド](../first-patch/)の `first patch` から続けます。ここに **LLM / Chat** エージェントを 1 つ追加します。
+[前のガイド](../first-patch/)の `first patch` から続けます。ここに **LLM / Chat** モジュールを 1 つ追加します。
 
-![パッチに追加した Chat エージェント（拡大表示）](../../../../assets/getting-started/chat-patch/01-chat-added.png)
+![パッチに追加した Chat モジュール](../../../../assets/getting-started/chat-patch/01-chat-added.png)
 
 ## 2. LLM のエンドポイントを設定する
 
@@ -31,15 +31,15 @@ LLM のエンドポイントと API キーの設定は、ウィンドウ左下�
 
 次に、ポート間をドラッグして Chat を経由するように繋ぎ直します。String Input の `string` を Chat の `message` へ、Chat の `message` を Display Value の `value` へ繋ぎます。
 
-![ワイヤーで繋がれた 3 つのエージェント](../../../../assets/getting-started/chat-patch/04-agents-wired.png)
+![ワイヤーで繋がれた 3 つのモジュール](../../../../assets/getting-started/chat-patch/04-modules-wired.png)
 
-エージェントを選択すると、右側に設定パネルが開きます。単純な項目はノード上で直接編集することもでき、次の手順ではそちらを使います。
+モジュールを選択すると、右側に設定パネルが開きます。単純な項目はノード上で直接編集することもでき、次の手順ではそちらを使います。
 
 `model` にはプロバイダ接頭辞付きのモデル名（`openai/…`、`claude/…`、`ollama/…`）を指定します。接頭辞が選ぶのは **Settings** のどの認証情報を使うかであって、モデルの提供元ではありません。そのため下の図のローカルの LM Studio のモデルも `openai/` 接頭辞で書きます。接頭辞がないと _"requires a provider prefix"_ エラーになります。デフォルトは `openai/gpt-5-nano` で、前の図に表示されているのがそれです。
 
 下の図ではレイアウトも調整しています。
 
-![モデル名を指定した Chat エージェント](../../../../assets/getting-started/chat-patch/05-model-configured.png)
+![モデル名を指定した Chat モジュール](../../../../assets/getting-started/chat-patch/05-model-configured.png)
 
 ## 4. パッチを実行する
 
@@ -57,7 +57,7 @@ String Input に入力すると LLM の Chat API が呼び出され、返答が 
 
 ## 5. 応答が返ってこないとき
 
-失敗したエージェントはタイトルの横に赤いアラートアイコンを表示します。ホバーするとメッセージを読めます。左下の **Logs** には詳細なログがあります。
+失敗したモジュールはタイトルの横に赤いアラートアイコンを表示します。ホバーするとメッセージを読めます。左下の **Logs** には詳細なログがあります。
 
 - **"requires a provider prefix"** — `model` に `openai/`、`claude/`、`ollama/` のいずれの接頭辞も付いていない
 - **接続エラー** — Settings で指定したエンドポイントが起動していないか、ベース URL が誤っている

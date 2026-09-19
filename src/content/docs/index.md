@@ -1,11 +1,11 @@
 ---
 title: Modular Agent
-description: Build AI workflows like a modular synth — patch extensible agents together visually into real-time pipelines.
+description: Build AI workflows like a modular synth — patch extensible modules together visually into real-time pipelines.
 template: splash
 prev: false
 next: false
 hero:
-  tagline: Assemble AI workflows the way you would patch a modular synth. Agents that each do one simple thing patch together into real-time pipelines spanning LLMs, databases, and messaging.
+  tagline: Assemble AI workflows the way you would patch a modular synth. Modules that each do one simple thing patch together into real-time pipelines spanning LLMs, databases, and messaging.
   image:
     alt: ""
     file: ../../assets/app_icon.png
@@ -35,15 +35,12 @@ hero:
 
 ## Features
 
-### Agents
+### Modules
 
-> Agent: Any part or process of the mind that by itself is simple enough to understand — even though the interactions among groups of such agents may produce phenomena that are much harder to understand.
-> — Marvin Minsky, _The Society of Mind_
-
-- **A Wide Range of Agents** — LLM, Web/HTTP, Slack, SQL databases, screen capture, and more
-- **Extensible** — Add agent plugins as Rust crates
-- **Parallel Execution** — Each agent runs independently, in parallel
-- **Stream-Based Data Flow** — Data flows between agents in real time
+- **A Wide Range of Modules** — LLM, Web/HTTP, Slack, SQL databases, screen capture, and more
+- **Extensible** — Add module plugins as Rust crates
+- **Parallel Execution** — Each module runs independently, in parallel
+- **Stream-Based Data Flow** — Data flows between modules in real time
 
 ### Runtime
 

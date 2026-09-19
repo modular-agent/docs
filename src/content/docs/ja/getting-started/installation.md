@@ -1,6 +1,6 @@
 ---
 title: インストール
-description: ワンコマンドインストーラーで Modular Agent を導入する手順と、デスクトップアプリをソースからビルドしてエージェントパッケージを追加する手順。
+description: ワンコマンドインストーラーで Modular Agent を導入する手順と、デスクトップアプリをソースからビルドしてモジュールパッケージを追加する手順。
 ---
 
 ## 前提条件
@@ -10,7 +10,7 @@ description: ワンコマンドインストーラーで Modular Agent を導入�
 ## クイックインストール
 
 ワンコマンドでリポジトリのクローンからソースビルドまで行えます。[デスクトップアプリ](https://github.com/modular-agent/modular-agent/tree/main/apps/desktop)と[CLI](https://github.com/modular-agent/modular-agent/tree/main/apps/cli) の
-どちらをビルドするか、推奨エージェントパッケージを含めるかを選べます。
+どちらをビルドするか、推奨モジュールパッケージを含めるかを選べます。
 
 デスクトップアプリの初回ビルドは 20〜40 分・約 10 GB のディスクを使います:
 
@@ -51,10 +51,10 @@ npm run tauri build      # Build for production
   - macOS: `dmg/*.dmg`
   - Linux: `deb/*.deb`
 
-これはミニマルビルドで、リンクされるのはリポジトリ内のエージェントクレート —
-**modular-agent-std**(標準ユーティリティエージェント)と **modular-agent-llm**(Claude /
+これはミニマルビルドで、リンクされるのはリポジトリ内のモジュールクレート —
+**modular-agent-std**(標準ユーティリティモジュール)と **modular-agent-llm**(Claude /
 OpenAI / Ollama 連携)— のみです。それ以外の Web スクレイピング、メッセージング、
-データベースなどは独立したエージェントパッケージとして提供されます。
+データベースなどは独立したモジュールパッケージとして提供されます。
 
 ### 開発モード
 
@@ -64,32 +64,32 @@ OpenAI / Ollama 連携)— のみです。それ以外の Web スクレイピン
 npm run tauri dev
 ```
 
-## エージェントパッケージを追加する
+## モジュールパッケージを追加する
 
-追加のエージェントはそれぞれ独立したリポジトリにあり、ビルド時にアプリへリンクします。
-使いたいパッケージをリポジトリルートの `custom_agents/` にクローンします。ディレクトリ名は
+追加のモジュールはそれぞれ独立したリポジトリにあり、ビルド時にアプリへリンクします。
+使いたいパッケージをリポジトリルートの `custom_modules/` にクローンします。ディレクトリ名は
 リポジトリ名のままにしてください。
 
 ```bash
-cd custom_agents
+cd custom_modules
 git clone https://github.com/modular-agent/modular-agent-web.git
 git clone https://github.com/modular-agent/modular-agent-sqlx.git
 cd ..
 ```
 
-例えば、[github.com/modular-agent](https://github.com/modular-agent/) から以下のエージェントをクローンできます。
+例えば、[github.com/modular-agent](https://github.com/modular-agent/) から以下のモジュールをクローンできます。
 
-| リポジトリ                                                                            | エージェント                                            |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| [modular-agent-lifelog](https://github.com/modular-agent/modular-agent-lifelog)       | 画面キャプチャ・ウィンドウ追跡エージェント              |
-| [modular-agent-mattermost](https://github.com/modular-agent/modular-agent-mattermost) | Mattermost メッセージングエージェント                   |
-| [modular-agent-monty](https://github.com/modular-agent/modular-agent-monty)           | Monty スクリプトエージェント                            |
-| [modular-agent-slack](https://github.com/modular-agent/modular-agent-slack)           | Slack メッセージングエージェント                        |
-| [modular-agent-sqlx](https://github.com/modular-agent/modular-agent-sqlx)             | SQL データベースエージェント(PostgreSQL、MySQL、SQLite) |
-| [modular-agent-web](https://github.com/modular-agent/modular-agent-web)               | Web/HTTP・スクレイピング・検索・YouTube エージェント    |
-| [modular-agent-zapcode](https://github.com/modular-agent/modular-agent-zapcode)       | ZapCode TypeScript スクリプトエージェント               |
+| リポジトリ                                                                            | モジュール                                            |
+| ------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| [modular-agent-lifelog](https://github.com/modular-agent/modular-agent-lifelog)       | 画面キャプチャ・ウィンドウ追跡モジュール              |
+| [modular-agent-mattermost](https://github.com/modular-agent/modular-agent-mattermost) | Mattermost メッセージングモジュール                   |
+| [modular-agent-monty](https://github.com/modular-agent/modular-agent-monty)           | Monty スクリプトモジュール                            |
+| [modular-agent-slack](https://github.com/modular-agent/modular-agent-slack)           | Slack メッセージングモジュール                        |
+| [modular-agent-sqlx](https://github.com/modular-agent/modular-agent-sqlx)             | SQL データベースモジュール(PostgreSQL、MySQL、SQLite) |
+| [modular-agent-web](https://github.com/modular-agent/modular-agent-web)               | Web/HTTP・スクレイピング・検索・YouTube モジュール    |
+| [modular-agent-zapcode](https://github.com/modular-agent/modular-agent-zapcode)       | ZapCode TypeScript スクリプトモジュール               |
 
-次に、リポジトリルートで **ma-config** ウィザードを実行し、エージェントと feature を
+次に、リポジトリルートで **ma-config** ウィザードを実行し、モジュールと feature を
 選択します。ウィザードに表示されるのはクローン済みのパッケージだけです。
 
 ```bash
