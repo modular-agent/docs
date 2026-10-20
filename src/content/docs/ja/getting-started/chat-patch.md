@@ -21,6 +21,8 @@ LLM のエンドポイントと API キーの設定は、ウィンドウ左下�
 
 ![Settings 画面の LLM セクション](../../../../assets/getting-started/chat-patch/02-settings-llm.png)
 
+設定は `~/.modular_agent/settings.json` に保存されます。API キーをこのファイルに残したくない場合は、キーの代わりに `${OPENAI_API_KEY}`(変数名は任意)と入力すると、設定の適用時に環境変数の値に置き換えられます。
+
 :::tip[OpenAI互換のローカル LLM を使う]
 **OpenAI API Base URL** に OpenAI 互換のエンドポイントを指定すると、ローカルの LLM を使えます。上のスクリーンショットでは LM Studio のエンドポイント `http://localhost:1234/v1` を指定しています。
 :::

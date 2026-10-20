@@ -96,8 +96,9 @@ cd ..
 cargo run --manifest-path tools/ma-config/Cargo.toml -- desktop
 ```
 
-選択を確定してウィザードに `cargo update` を実行させたら、`apps/desktop` で
-`npm run tauri build`(または `npm run tauri dev`)を実行して再ビルドします。
+選択を確定したら、`apps/desktop` で `npm run tauri build`(または `npm run tauri dev`)
+を実行して再ビルドします。ウィザードは `Cargo.lock` を変更せず、新しい選択で増えた分だけが
+次のビルドで追加されます。`cargo update` もあわせて実行したい場合は `--update` を付けます。
 
 選択内容は `apps/desktop/ma-config.toml` に保存され、次回以降の実行で再利用されます。
 選択したパッケージが未クローンでウィザードが停止した場合は、クローンしてから
@@ -105,4 +106,8 @@ cargo run --manifest-path tools/ma-config/Cargo.toml -- desktop
 
 同じ手順は CLI ランナー [ma](https://github.com/modular-agent/modular-agent/tree/main/apps/cli) にも使えます。ma-config に `desktop` の代わりに `cli` を
 渡し、`cargo build -p modular-agent-cli --release` でビルドします(バイナリは
-`target/release/ma` に出力されます)。
+`target/release/ma` に出力されます)。`ma run <patch>` は 1 つのパッチを標準入出力に
+つないで実行し、`ma serve --workspace <dir>` はワークスペースのパッチをサーバーとして
+動かし続けます。デスクトップアプリの `~/.modular_agent` ディレクトリもそのまま実行できます。
+オプションやコンテナイメージについては
+[ma の README](https://github.com/modular-agent/modular-agent/tree/main/apps/cli) を参照してください。

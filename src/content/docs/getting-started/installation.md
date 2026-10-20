@@ -102,8 +102,9 @@ features — only cloned packages are offered:
 cargo run --manifest-path tools/ma-config/Cargo.toml -- desktop
 ```
 
-Confirm the selection, let the wizard run `cargo update`, and rebuild in `apps/desktop`
-with `npm run tauri build` (or `npm run tauri dev`).
+Confirm the selection and rebuild in `apps/desktop` with `npm run tauri build` (or
+`npm run tauri dev`). The wizard leaves `Cargo.lock` alone apart from what the new
+selection adds on the next build; pass `--update` to have it run `cargo update` as well.
 
 The selection is saved to `apps/desktop/ma-config.toml` and reused on later runs. If the
 wizard stops because a selected package is not cloned yet, clone it and re-run with
@@ -111,4 +112,8 @@ wizard stops because a selected package is not cloned yet, clone it and re-run w
 
 The same steps work for the [ma](https://github.com/modular-agent/modular-agent/tree/main/apps/cli) command-line runner: pass `cli` instead of `desktop` to
 ma-config, and build with `cargo build -p modular-agent-cli --release` (the binary lands
-at `target/release/ma`).
+at `target/release/ma`). `ma run <patch>` runs one patch with stdin and stdout wired to
+it, and `ma serve --workspace <dir>` keeps a workspace's patches running as a server —
+the desktop app's `~/.modular_agent` directory runs unchanged. See the
+[ma README](https://github.com/modular-agent/modular-agent/tree/main/apps/cli) for
+options and the container image.

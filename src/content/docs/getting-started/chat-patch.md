@@ -21,6 +21,8 @@ The LLM endpoint and API key live in **Settings**, at the bottom left of the win
 
 ![The LLM section of the Settings screen](../../../assets/getting-started/chat-patch/02-settings-llm.png)
 
+Settings are saved to `~/.modular_agent/settings.json`. To keep the key out of that file, enter `${OPENAI_API_KEY}` (or any variable name) instead of the key itself; it is replaced with the environment variable's value when the setting is applied.
+
 :::tip[Using an OpenAI-compatible local LLM]
 Point **OpenAI API Base URL** at any OpenAI-compatible endpoint to run against a local model. The screenshot above uses LM Studio on `http://localhost:1234/v1`.
 :::
